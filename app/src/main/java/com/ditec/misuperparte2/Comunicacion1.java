@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class Comunicacion1 extends AppCompatActivity {
     EditText edtnombre;
@@ -20,10 +21,16 @@ public class Comunicacion1 extends AppCompatActivity {
     }
     public void Verificar(View view){
         Intent intent = new Intent(this, Comunicacion2.class);
-        intent.putExtra("nombre", edtnombre.getText().toString());
-        intent.putExtra("ingresomes", Integer.parseInt(edtingresomes.getText().toString()));
-        // startActivity(intent);
-        startActivityForResult(intent, 1234);
+        if(edtnombre.getText().toString().length()>0&&edtingresomes.getText().toString().length()>0)
+        {
+            intent.putExtra("nombre", edtnombre.getText().toString());
+            intent.putExtra("ingresomes", Integer.parseInt(edtingresomes.getText().toString()));
+            // startActivity(intent);
+            startActivityForResult(intent, 1234);
+        }
+            else
+                Toast.makeText(this, "Debe de poner todos los datos",Toast.LENGTH_SHORT).show();
+
     }
     @Override
     protected void onActivityResult(int requestCode,
