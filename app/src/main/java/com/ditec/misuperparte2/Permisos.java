@@ -9,6 +9,8 @@ import android.Manifest;
 import android.content.DialogInterface;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.os.Handler;
+
 
 public class Permisos extends AppCompatActivity {
 
@@ -17,11 +19,17 @@ public class Permisos extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_permisos);
         if (ContextCompat.checkSelfPermission(this,
-                Manifest.permission.CALL_PHONE) == PackageManager.PERMISSION_GRANTED) {
+                Manifest.permission.CALL_PHONE) == PackageManager.PERMISSION_GRANTED){
             arranque();
         } else {
-            solicitarPermiso(Manifest.permission.CALL_PHONE,
-                    "Sin el permiso" + " de telefono no podemos realizar llamadas.", 0);
+            Handler handler = new Handler();
+            handler.postDelayed(
+                    new Runnable() {
+                        public void run() {
+                            solicitarPermiso(Manifest.permission.CALL_PHONE,
+                                    "Sin el permiso" + " de telefono no podemos realizar llamadas.", 0);
+                        }
+                    }, 2000L);
         }
     }
     public void solicitarPermiso(final String permiso, String justificacion, final int codigo) {
