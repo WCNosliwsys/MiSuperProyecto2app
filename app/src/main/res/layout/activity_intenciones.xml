@@ -36,5 +36,9 @@
         android:layout_height="wrap_content"
         android:onClick="whatsapp"
         android:text="Whatsapp" />
-
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="navegacion"
+        android:text="navegacion" />
 </LinearLayout>
