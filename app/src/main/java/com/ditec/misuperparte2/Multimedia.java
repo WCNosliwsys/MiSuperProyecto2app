@@ -36,4 +36,14 @@ public class Multimedia  extends AppCompatActivity {
     public void multimeda3(View view) {
         startActivity(new Intent(this, Multimedia3.class));
     }
+
+    public void otrosonido(View view) {
+        if (mp != null) {
+            mp.reset();
+            mp.release();
+            mp = null;
+        }
+        mp = MediaPlayer.create(this, R.raw.otramusica);
+        mp.start();
+    }
 }
