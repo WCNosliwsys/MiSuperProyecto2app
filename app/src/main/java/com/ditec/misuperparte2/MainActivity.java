@@ -2,6 +2,7 @@ package com.ditec.misuperparte2;
 
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
@@ -10,6 +11,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Toast;
+
 
 import com.google.android.material.navigation.NavigationView;
 
@@ -114,5 +118,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    public void btnderecha(View view) {
+        Toast.makeText(this, "Se pulso el floating button de la derecha "+ view.getTag(), Toast.LENGTH_LONG).show();
+    }
+    public void btnizquierda(View view) {
+        Toast.makeText(this, "Se pulso el floating button de la izquierda "+ view.getTag(), Toast.LENGTH_LONG).show();
     }
 }
