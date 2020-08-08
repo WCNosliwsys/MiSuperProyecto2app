@@ -126,4 +126,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public void btnizquierda(View view) {
         Toast.makeText(this, "Se pulso el floating button de la izquierda "+ view.getTag(), Toast.LENGTH_LONG).show();
     }
+
+
+    public void btntag(View view) {
+        if(view.getTag().equals("fabizquierda"))
+            Toast.makeText(this, "Se pulso el floating button de la izquierda "+ view.getTag(), Toast.LENGTH_LONG).show();
+        else
+            Toast.makeText(this, "Se pulso el floating button de la derecha "+ view.getTag(), Toast.LENGTH_LONG).show();
+
+    }
 }
