@@ -3,6 +3,7 @@ package com.ditec.misuperparte2;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.KeyEvent;
@@ -52,11 +53,12 @@ public class Multimedia3  extends AppCompatActivity implements SurfaceHolder.Cal
         if(mediaPlayer==null) {
             mediaPlayer = new MediaPlayer();
             mediaPlayer.setOnPreparedListener(this);
-            try {
+            startService(new Intent(this, IntentServiceMusica.class));
+/*            try {
                 mediaPlayer.setDataSource("https://migrandiosaappwilson.000webhostapp.com/dancing.mp3");
                 mediaPlayer.prepare();
             } catch (IOException e) {
-            }
+            }*/
             construirMediaController();
         }
         else{

@@ -23,6 +23,7 @@
         <activity android:name=".Comunicacion3" />
         <activity android:name=".Comunicacion2" />
         <activity android:name=".Comunicacion1" />
+        <service android:name=".IntentServiceMusica"/>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
